@@ -4,7 +4,3 @@ mockname: "{{ .InterfaceName }}"
 outpkg: "mocks"
 filename: "{{ .InterfaceName | snakecase | lower }}_mock.go"
 disable-version-string: true
-packages:
-  github.com/viqueen/go-redpanda/pkg/pet:
-    interfaces:
-      Project:
