@@ -1,4 +1,4 @@
-module github.com/viqueen/go-template
+module github.com/viqueen/go-redpanda
 
 go 1.23.2
 
