@@ -13,3 +13,14 @@ mocks:
 		--volume "${PWD}":/go/src \
 		--workdir /go/src \
 		vektra/mockery:v2.46 --all
+
+rpk-connect-create:
+	 docker run --rm \
+	 	docker.redpanda.com/redpandadata/connect \
+	 	create "$@" > connect.yaml
+
+rpk-connect-run:
+	 docker run --rm -it \
+        -v "${PWD}"/connect.yaml:/connect.yaml \
+        docker.redpanda.com/redpandadata/connect \
+        run

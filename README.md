@@ -14,14 +14,8 @@
 
 ### housekeeping
 
-- build it
+- run it
 
 ```bash
-make build
-```
-
-- generate mocks
-
-```bash
-make mocks
+make rpk-connect-run
 ```
