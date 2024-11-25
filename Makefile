@@ -21,6 +21,7 @@ rpk-connect-create:
 
 rpk-connect-run:
 	 docker run --rm -it \
-        -v "${PWD}"/connect.yaml:/connect.yaml \
-        docker.redpanda.com/redpandadata/connect \
-        run
+	 	--network="go-redpanda-local" \
+		-v "${PWD}"/connect.yaml:/connect.yaml \
+		docker.redpanda.com/redpandadata/connect \
+		run
