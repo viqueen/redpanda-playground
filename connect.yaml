@@ -24,7 +24,11 @@ buffer:
 
 pipeline:
   threads: -1
-  processors: []
+  processors: [
+    {
+      mapping: root = content().uppercase()
+    }
+  ]
 
 output:
   stdout: {}
