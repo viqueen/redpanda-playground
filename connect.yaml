@@ -15,8 +15,12 @@ pipeline:
 output:
   kafka:
     addresses:
-      - broker:9092
+      - localhost:9092
     topic: spicypanda
+#  kafka_franz:
+#    seed_brokers:
+#      - localhost:9092
+#    topic: spicypanda
 
 input_resources: []
 processor_resources: []

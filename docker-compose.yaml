@@ -6,10 +6,3 @@ services:
       - "9092:9092"
     volumes:
       - .local/kafka:/var/lib/kafka
-    networks:
-      - local
-
-networks:
-  local:
-    driver: bridge
-    name: go-redpanda-local
