@@ -1,5 +1,7 @@
 input:
-  stdin: {}
+  spicedb_watch:
+    endpoint: localhost:50051
+    cache: "spicedb_cache"
 
 buffer:
   none: {}
@@ -17,15 +19,15 @@ output:
     addresses:
       - localhost:9092
     topic: spicypanda
-#  kafka_franz:
-#    seed_brokers:
-#      - localhost:9092
-#    topic: spicypanda
 
 input_resources: []
 processor_resources: []
 output_resources: []
-cache_resources: []
+cache_resources:
+  - label: "spicedb_cache"
+    redis:
+      url: redis://:6379
+
 rate_limit_resources: []
 
 logger:

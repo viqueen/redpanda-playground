@@ -1,7 +1,20 @@
 services:
+  connect-input:
+    container_name: connect-input
+    image: authzed/spicedb:v1.38.0
+    ports:
+      - "50051:50051"
+    command: ["serve-testing"]
+
+  connect-input-cache:
+    container_name: connect-input-cache
+    image: redis:6.2.5
+    ports:
+      - "6379:6379"
+
   connect-output:
+    container_name: connect-output
     image: apache/kafka:3.9.0
-    container_name: broker
     ports:
       - "9092:9092"
     volumes:
