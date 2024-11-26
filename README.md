@@ -1,6 +1,7 @@
 ## go-redpanda
 
-> TODO: description
+Demo project that orchestrates [redpanda/connect](https://github.com/redpanda-data/connect) data stream
+from a [spicedb watch](https://docs.redpanda.com/redpanda-connect/components/inputs/spicedb_watch/) input to a [kafka](https://docs.redpanda.com/redpanda-connect/components/outputs/kafka/) output.
 
 ---
 
