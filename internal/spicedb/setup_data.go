@@ -24,7 +24,7 @@ func setupOrganisation(ctx context.Context, client *authzed.Client) error {
 	}
 	groups := make([]uuid.UUID, 0, 10)
 	for i := 0; i < 10; i++ {
-		members := users[i/10 : i+3/10]
+		members := users[i/10 : (i+3)/10]
 		groupId, err := setupGroup(ctx, client, orgId, members)
 		if err != nil {
 			return err
@@ -33,7 +33,7 @@ func setupOrganisation(ctx context.Context, client *authzed.Client) error {
 	}
 	documents := make([]uuid.UUID, 0, 10)
 	for i := 0; i < 10; i++ {
-		documentId, err := setupDocument(ctx, client, orgId, users[i], groups[i/10:i+3/10])
+		documentId, err := setupDocument(ctx, client, orgId, users[i], groups[i/10:(i+3)/10])
 		if err != nil {
 			return err
 		}
