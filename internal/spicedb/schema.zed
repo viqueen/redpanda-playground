@@ -1,0 +1,19 @@
+definition user {}
+
+definition organisation {
+    relation member: user
+}
+
+definition group {
+    relation org: organisation
+    relation member: user
+}
+
+definition document {
+    relation org: organisation
+    relation owner: user
+    relation shared_with: group#member
+
+    permission can_view = (owner + shared_with) & org->member
+    permission can_update = owner & org->member
+}

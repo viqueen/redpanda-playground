@@ -13,18 +13,3 @@ mocks:
 		--volume "${PWD}":/go/src \
 		--workdir /go/src \
 		vektra/mockery:v2.46 --all
-
-kafka-session:
-	docker exec --workdir /opt/kafka/bin -it connect-output bash
-
-rpk-connect-create:
-	 docker run --rm \
-	 	docker.redpanda.com/redpandadata/connect \
-	 	create "$@" > connect.yaml
-
-rpk-connect-run:
-	 docker run --rm -it \
-	 	--network="host" \
-		-v "${PWD}"/connect.yaml:/connect.yaml \
-		docker.redpanda.com/redpandadata/connect \
-		run

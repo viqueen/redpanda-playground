@@ -46,8 +46,8 @@ docker exec --workdir /opt/kafka/bin -it connect-output bash
 
 ```bash
 ./kafka-console-consumer.sh --topic spicypanda \
-> --bootstrap-server localhost:9092 \
-> --from-beginning
+ --bootstrap-server localhost:9092 \
+ --from-beginning
 ```
 
 ---
@@ -55,5 +55,5 @@ docker exec --workdir /opt/kafka/bin -it connect-output bash
 ### setting up redpanda connect
 
 ```bash
-make rpk-connect-run
+./cli.sh connect_run
 ```
