@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 )
 
-func WriteSchema() error {
+func WriteSchema(ctx context.Context) error {
 	wd, err := os.Getwd()
 	if err != nil {
 		return err
@@ -20,7 +20,7 @@ func WriteSchema() error {
 		return err
 	}
 
-	return withClient(func(client *authzed.Client) error {
+	return withClient(ctx, func(ctx context.Context, client *authzed.Client) error {
 		schema := string(schemaContent)
 		request := &pb.WriteSchemaRequest{
 			Schema: schema,
