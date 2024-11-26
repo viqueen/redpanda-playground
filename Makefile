@@ -14,6 +14,9 @@ mocks:
 		--workdir /go/src \
 		vektra/mockery:v2.46 --all
 
+kafka-session:
+	docker exec --workdir /opt/kafka/bin -it connect-output bash
+
 rpk-connect-create:
 	 docker run --rm \
 	 	docker.redpanda.com/redpandadata/connect \

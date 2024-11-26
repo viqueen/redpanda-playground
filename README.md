@@ -24,7 +24,7 @@ docker compose up -d
 - create a session
 
 ```bash
-docker exec --workdir /opt/kafka/bin -it broker bash
+docker exec --workdir /opt/kafka/bin -it connect-output bash
 ```
 
 - create a topic

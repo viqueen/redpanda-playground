@@ -33,12 +33,14 @@ rate_limit_resources: []
 logger:
   level: INFO
   format: logfmt
-  add_timestamp: false
+  add_timestamp: true
   level_name: level
   timestamp_name: time
   message_name: msg
   static_fields:
     '@service': redpanda-connect
+    '@env': development
+    '@namespace': default
   file:
     path: ""
     rotate: false
