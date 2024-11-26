@@ -1,7 +1,9 @@
-## go-redpanda
+## redpanda-playground
 
-Demo project that orchestrates [redpanda/connect](https://github.com/redpanda-data/connect) data stream
-from a [spicedb watch](https://docs.redpanda.com/redpanda-connect/components/inputs/spicedb_watch/) input to a [kafka](https://docs.redpanda.com/redpanda-connect/components/outputs/kafka/) output.
+Demo project that orchestrates [redpanda/connect](https://github.com/redpanda-data/connect) data streams, with [redpanda/console](https://github.com/redpanda-data/console) as the UI.
+
+**examples**
+- from a [spicedb watch](https://docs.redpanda.com/redpanda-connect/components/inputs/spicedb_watch/) input to a [kafka](https://docs.redpanda.com/redpanda-connect/components/outputs/kafka/) output.
 
 ---
 
@@ -13,13 +15,19 @@ from a [spicedb watch](https://docs.redpanda.com/redpanda-connect/components/inp
 
 ---
 
-### setting up kafka
+### setup
 
 - compose up
 
 ```bash
 docker compose up -d
 ```
+
+---
+
+### spicedb watch to kafka
+
+#### setting up kafka
 
 - create a session
 
@@ -52,8 +60,23 @@ docker exec --workdir /opt/kafka/bin -it connect-output bash
 
 ---
 
-### setting up redpanda connect
+###  run redpanda connect
 
 ```bash
 ./cli.sh connect_run
 ```
+
+---
+
+### setting up spicedb 
+
+- write schema
+
+```bash
+./cli.sh spicedb write-schema
+```
+
+- setup data
+
+```bash
+./cli.sh spicedb setup-data
